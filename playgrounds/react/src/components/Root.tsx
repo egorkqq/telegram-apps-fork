@@ -25,6 +25,24 @@ export function Root() {
     <ErrorBoundary fallback={ErrorBoundaryError}>
       <TonConnectUIProvider
         manifestUrl={new URL('/tonconnect-manifest.json', window.location.href).toString()}
+        walletsListConfiguration={
+          includeWallets: [
+            {
+              "app_name": "architec.ton",
+              "name": "Architec.ton",
+              "image": "https://static.tildacdn.com/tild3333-3864-4236-a261-353164396136/IMG_9778.PNG",
+              "about_url": "https://architecton.tech/",
+              "universal_url": "https://t.me/architec_ton_bot?attach=wallet",
+              "bridge": [
+                {
+                  "type": "sse",
+                  "url": "https://tonconnect.architecton.site/"
+                },
+              ],
+              "platforms": ["ios", "android", "macos", "windows", "linux"]
+            }
+          ]
+        }
       >
         <App/>
       </TonConnectUIProvider>
